@@ -1,7 +1,10 @@
 interface updateWitnoptions{
 name?: string,
 description?: string,
-price?: number
+price?: number,
+stock?: number,
+categoria?: string
+
 }  
 
 
@@ -13,13 +16,20 @@ constructor(
     public id: String, 
     public name: String, 
     public price: number, 
-    public description? : String
+    public stock:number,
+    public description? : string,
+    public categoria?: string,
+
+   
 ){}
 
-updateWith({name, description, price}:updateWitnoptions ){
+updateWith({name, description, price,categoria, stock, }:updateWitnoptions ){
 this.name = name ?? this.name;
 this.description = description ?? this.description;
 this.price = price ?? this.price;
+this.categoria = categoria ?? this.categoria;
+this.stock = stock ?? this.stock;
+
 
 }
 
